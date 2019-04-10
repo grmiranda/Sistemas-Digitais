@@ -1,0 +1,15 @@
+
+State Machine - |top|proj_qsys:u0|lcd_driver:lcd_driver_0|state
+Name state.working state.finish state.00 
+state.00 0 0 0 
+state.working 1 0 1 
+state.finish 0 1 1 
+
+State Machine - |top|proj_qsys:u0|proj_qsys_nios:nios|proj_qsys_nios_nios2_oci:the_proj_qsys_nios_nios2_oci|proj_qsys_nios_jtag_debug_module_wrapper:the_proj_qsys_nios_jtag_debug_module_wrapper|proj_qsys_nios_jtag_debug_module_tck:the_proj_qsys_nios_jtag_debug_module_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 

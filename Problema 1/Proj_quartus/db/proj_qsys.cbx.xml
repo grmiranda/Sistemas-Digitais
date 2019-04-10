@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="proj_qsys">
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|proj_qsys:u0|proj_qsys_jtag:jtag|proj_qsys_jtag_scfifo_w:the_proj_qsys_jtag_scfifo_w|scfifo:wfifo" CBX_FILE_NAME="scfifo_jr21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|proj_qsys:u0|proj_qsys_nios:nios|proj_qsys_nios_nios2_oci:the_proj_qsys_nios_nios2_oci|proj_qsys_nios_nios2_ocimem:the_proj_qsys_nios_nios2_ocimem|proj_qsys_nios_ociram_sp_ram_module:proj_qsys_nios_ociram_sp_ram|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_fn81.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|proj_qsys:u0|proj_qsys_nios:nios|proj_qsys_nios_register_bank_a_module:proj_qsys_nios_register_bank_a|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_sgg1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|proj_qsys:u0|proj_qsys_nios:nios|proj_qsys_nios_register_bank_b_module:proj_qsys_nios_register_bank_b|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_tgg1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|proj_qsys:u0|proj_qsys_jtag:jtag|proj_qsys_jtag_scfifo_r:the_proj_qsys_jtag_scfifo_r|scfifo:rfifo" CBX_FILE_NAME="scfifo_jr21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|proj_qsys:u0|proj_qsys_memory:memory|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_odc1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
