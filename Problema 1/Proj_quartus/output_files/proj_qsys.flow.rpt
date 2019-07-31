@@ -1,5 +1,5 @@
 Flow report for proj_qsys
-Mon Apr 08 23:34:30 2019
+Wed Jul 31 16:25:37 2019
 Quartus II 64-Bit Version 13.1.4 Build 182 03/12/2014 SJ Web Edition
 
 
@@ -40,20 +40,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Mon Apr 08 23:34:22 2019      ;
+; Flow Status                        ; Successful - Wed Jul 31 16:25:28 2019      ;
 ; Quartus II 64-Bit Version          ; 13.1.4 Build 182 03/12/2014 SJ Web Edition ;
 ; Revision Name                      ; proj_qsys                                  ;
 ; Top-level Entity Name              ; top                                        ;
 ; Family                             ; Cyclone IV E                               ;
 ; Device                             ; EP4CE6E22C8                                ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 1,669 / 6,272 ( 27 % )                     ;
-;     Total combinational functions  ; 1,555 / 6,272 ( 25 % )                     ;
-;     Dedicated logic registers      ; 939 / 6,272 ( 15 % )                       ;
-; Total registers                    ; 939                                        ;
-; Total pins                         ; 20 / 92 ( 22 % )                           ;
+; Total logic elements               ; 1,948 / 6,272 ( 31 % )                     ;
+;     Total combinational functions  ; 1,829 / 6,272 ( 29 % )                     ;
+;     Dedicated logic registers      ; 1,118 / 6,272 ( 18 % )                     ;
+; Total registers                    ; 1118                                       ;
+; Total pins                         ; 22 / 92 ( 24 % )                           ;
 ; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 76,800 / 276,480 ( 28 % )                  ;
+; Total memory bits                  ; 78,848 / 276,480 ( 29 % )                  ;
 ; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                             ;
 ; Total PLLs                         ; 0 / 2 ( 0 % )                              ;
 +------------------------------------+--------------------------------------------+
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/08/2019 23:33:41 ;
+; Start date & time ; 07/31/2019 16:24:30 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; proj_qsys           ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+-------------------------------------------------------------+---------------+---------------------------------------------------------+------------+
 ; Assignment Name                     ; Value                                                       ; Default Value ; Entity Name                                             ; Section Id ;
 +-------------------------------------+-------------------------------------------------------------+---------------+---------------------------------------------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 40637553349577.155477722008840                              ; --            ; --                                                      ; --         ;
+; COMPILER_SIGNATURE_ID               ; 40637553349577.156460107002132                              ; --            ; --                                                      ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                        ; --            ; altera_avalon_sc_fifo                                   ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                        ; --            ; altera_customins_master_translator                      ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                        ; --            ; altera_customins_slave_translator                       ; --         ;
@@ -173,7 +173,7 @@ applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                ; --            ; --                                                      ; --         ;
 ; SLD_FILE                            ; proj_qsys/synthesis/proj_qsys.regmap                        ; --            ; --                                                      ; --         ;
 ; SLD_FILE                            ; proj_qsys/synthesis/proj_qsys.debuginfo                     ; --            ; --                                                      ; --         ;
-; SLD_INFO                            ; QSYS_NAME proj_qsys HAS_SOPCINFO 1 GENERATION_ID 1554777079 ; --            ; --                                                      ; --         ;
+; SLD_INFO                            ; QSYS_NAME proj_qsys HAS_SOPCINFO 1 GENERATION_ID 1564600714 ; --            ; --                                                      ; --         ;
 ; SOPCINFO_FILE                       ; proj_qsys/synthesis/../../proj_qsys.sopcinfo                ; --            ; --                                                      ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                          ; --            ; --                                                      ; --         ;
 ; TOP_LEVEL_ENTITY                    ; top                                                         ; proj_qsys     ; --                                                      ; --         ;
@@ -185,11 +185,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:18     ; 1.0                     ; 4758 MB             ; 00:00:15                           ;
-; Fitter                    ; 00:00:14     ; 1.1                     ; 5144 MB             ; 00:00:15                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4609 MB             ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 4688 MB             ; 00:00:05                           ;
-; Total                     ; 00:00:39     ; --                      ; --                  ; 00:00:37                           ;
+; Analysis & Synthesis      ; 00:00:19     ; 1.0                     ; 4772 MB             ; 00:00:18                           ;
+; Fitter                    ; 00:00:27     ; 1.0                     ; 4997 MB             ; 00:00:20                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 4601 MB             ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 4667 MB             ; 00:00:05                           ;
+; Total                     ; 00:00:56     ; --                      ; --                  ; 00:00:45                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -198,10 +198,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-7O28QF4  ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; DESKTOP-7O28QF4  ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; DESKTOP-7O28QF4  ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-7O28QF4  ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; DESKTOP-KHH2LDM  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-KHH2LDM  ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-KHH2LDM  ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-KHH2LDM  ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

@@ -2,7 +2,7 @@ set_global_assignment -entity "proj_qsys" -library "proj_qsys" -name IP_TOOL_NAM
 set_global_assignment -entity "proj_qsys" -library "proj_qsys" -name IP_TOOL_VERSION "13.1"
 set_global_assignment -entity "proj_qsys" -library "proj_qsys" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "proj_qsys" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../proj_qsys.sopcinfo"]
-set_global_assignment -entity "proj_qsys" -library "proj_qsys" -name SLD_INFO "QSYS_NAME proj_qsys HAS_SOPCINFO 1 GENERATION_ID 1554777079"
+set_global_assignment -entity "proj_qsys" -library "proj_qsys" -name SLD_INFO "QSYS_NAME proj_qsys HAS_SOPCINFO 1 GENERATION_ID 1564600714"
 set_global_assignment -library "proj_qsys" -name MISC_FILE [file join $::quartus(qip_path) "../../proj_qsys.cmp"]
 set_global_assignment -library "proj_qsys" -name SLD_FILE [file join $::quartus(qip_path) "proj_qsys.regmap"]
 set_global_assignment -library "proj_qsys" -name SLD_FILE [file join $::quartus(qip_path) "proj_qsys.debuginfo"]
@@ -36,6 +36,11 @@ set_global_assignment -library "proj_qsys" -name SYSTEMVERILOG_FILE [file join $
 set_global_assignment -library "proj_qsys" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_customins_slave_translator.sv"]
 set_global_assignment -library "proj_qsys" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/proj_qsys_nios_custom_instruction_master_multi_xconnect.sv"]
 set_global_assignment -library "proj_qsys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_customins_master_translator.v"]
+set_global_assignment -library "proj_qsys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_up_rs232_counters.v"]
+set_global_assignment -library "proj_qsys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_up_rs232_in_deserializer.v"]
+set_global_assignment -library "proj_qsys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_up_rs232_out_serializer.v"]
+set_global_assignment -library "proj_qsys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_up_sync_fifo.v"]
+set_global_assignment -library "proj_qsys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/proj_qsys_rs232_0.v"]
 set_global_assignment -library "proj_qsys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/LCD_Driver.v"]
 set_global_assignment -library "proj_qsys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/proj_qsys_leds.v"]
 set_global_assignment -library "proj_qsys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/proj_qsys_buttons.v"]
