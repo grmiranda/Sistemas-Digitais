@@ -1,0 +1,94 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/17.0
+vdiv
+Z0 !s110 1512608668
+!i10b 1
+!s100 E9d5VXofCoaL9G47KOYz]1
+Ig^YK13:Wb_BE63fM4bR2`3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/Havallon/Desktop/test
+w1511746118
+8C:/Users/Havallon/Desktop/test/div.v
+FC:/Users/Havallon/Desktop/test/div.v
+L0 5
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1512608668.000000
+!s107 C:/Users/Havallon/Desktop/test/div.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Havallon/Desktop/test/div.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vmul
+Z7 !s110 1512608667
+!i10b 1
+!s100 RjBdc]LOgeNK;cCX>Zg=Y0
+I;N;KObV5kg5?UDZN2i28A1
+R1
+R2
+w1512604094
+8C:/Users/Havallon/Desktop/test/mul.v
+FC:/Users/Havallon/Desktop/test/mul.v
+L0 5
+R3
+r1
+!s85 0
+31
+Z8 !s108 1512608667.000000
+!s107 C:/Users/Havallon/Desktop/test/mul.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Havallon/Desktop/test/mul.v|
+!i113 1
+R5
+R6
+vresto
+R0
+!i10b 1
+!s100 1njYX=>55JGoOheo=Qkd72
+ImGGCS@FPd3I]`UYhSH6Oo3
+R1
+R2
+w1511995510
+8C:/Users/Havallon/Desktop/test/resto.v
+FC:/Users/Havallon/Desktop/test/resto.v
+L0 5
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Havallon/Desktop/test/resto.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Havallon/Desktop/test/resto.v|
+!i113 1
+R5
+R6
+vtb_mul
+R7
+!i10b 1
+!s100 1DAm?EKQ19_2kAeG^]U1T0
+IZB4oiz>ZUNa_2aD3dMWl90
+R1
+R2
+w1512608660
+8C:/Users/Havallon/Desktop/test/tb_mul.v
+FC:/Users/Havallon/Desktop/test/tb_mul.v
+L0 3
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/Havallon/Desktop/test/tb_mul.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Havallon/Desktop/test/tb_mul.v|
+!i113 1
+R5
+R6

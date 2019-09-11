@@ -1,0 +1,114 @@
+##RESET
+set_location_assignment PIN_25 -to RST
+
+##CLOCK
+set_location_assignment PIN_23 -to CLK
+
+###PUSHBUTTONS
+set_location_assignment PIN_91 -to PB[0]
+set_location_assignment PIN_90 -to PB[1]
+set_location_assignment PIN_89 -to PB[2]
+set_location_assignment PIN_88 -to PB[3]
+
+###BUZZER
+set_location_assignment PIN_110 -to BEEP
+
+###LED
+set_location_assignment PIN_84 -to LED[0]
+set_location_assignment PIN_85 -to LED[1]
+set_location_assignment PIN_86 -to LED[2]
+set_location_assignment PIN_87 -to LED[3]
+
+###UART
+set_location_assignment PIN_114 -to TX
+set_location_assignment PIN_115 -to RX
+
+###I2C
+set_location_assignment PIN_112 -to SCL
+set_location_assignment PIN_113 -to SDA
+set_location_assignment PIN_99 -to IIC_SCL
+set_location_assignment PIN_98 -to I2C_SDA
+
+###PS2
+set_location_assignment PIN_119 -to PS_CLK
+set_location_assignment PIN_120 -to PS_DATA
+
+###IR
+set_location_assignment PIN_100 -to IR
+
+###VGA
+set_location_assignment PIN_101 -to HSYNC
+set_location_assignment PIN_103 -to VSYNC
+set_location_assignment PIN_104 -to B
+set_location_assignment PIN_105 -to G
+set_location_assignment PIN_106 -to R
+
+###LCD
+set_location_assignment PIN_141 -to RS
+set_location_assignment PIN_138 -to RW
+set_location_assignment PIN_143 -to E
+set_location_assignment PIN_142 -to D[0]
+set_location_assignment PIN_1 -to D[1]
+set_location_assignment PIN_144 -to D[2]
+set_location_assignment PIN_3 -to D[3]
+set_location_assignment PIN_2 -to D[4]
+set_location_assignment PIN_10 -to D[5]
+set_location_assignment PIN_7 -to D[6]
+set_location_assignment PIN_11 -to D[7]
+
+###7SEG
+set_location_assignment PIN_133 -to DIG[0]
+set_location_assignment PIN_135 -to DIG[1]
+set_location_assignment PIN_136 -to DIG[2]
+set_location_assignment PIN_137 -to DIG[3]
+set_location_assignment PIN_128 -to SEG[0]
+set_location_assignment PIN_121 -to SEG[1]
+set_location_assignment PIN_125 -to SEG[2]
+set_location_assignment PIN_129 -to SEG[3]
+set_location_assignment PIN_132 -to SEG[4]
+set_location_assignment PIN_126 -to SEG[5]
+set_location_assignment PIN_124 -to SEG[6]
+set_location_assignment PIN_127 -to SEG[7]
+
+###SDRAM
+set_location_assignment PIN_28 -to SD[0]
+set_location_assignment PIN_30 -to SD[1]
+set_location_assignment PIN_31 -to SD[2]
+set_location_assignment PIN_32 -to SD[3]
+set_location_assignment PIN_33 -to SD[4]
+set_location_assignment PIN_34 -to SD[5]
+set_location_assignment PIN_38 -to SD[6]
+set_location_assignment PIN_39 -to SD[7]
+set_location_assignment PIN_54 -to SD[8]
+set_location_assignment PIN_53 -to SD[9]
+set_location_assignment PIN_52 -to SD[10]
+set_location_assignment PIN_51 -to SD[11]
+set_location_assignment PIN_50 -to SD[12]
+set_location_assignment PIN_49 -to SD[13]
+set_location_assignment PIN_46 -to SD[14]
+set_location_assignment PIN_44 -to SD[15]
+
+set_location_assignment PIN_76 -to SA[0]
+set_location_assignment PIN_77 -to SA[1]
+set_location_assignment PIN_80 -to SA[2]
+set_location_assignment PIN_83 -to SA[3]
+set_location_assignment PIN_68 -to SA[4]
+set_location_assignment PIN_67 -to SA[5]
+set_location_assignment PIN_66 -to SA[6]
+set_location_assignment PIN_65 -to SA[7]
+set_location_assignment PIN_64 -to SA[8]
+set_location_assignment PIN_60 -to SA[9]
+set_location_assignment PIN_75 -to SA[10]
+set_location_assignment PIN_59 -to SA[11]
+
+set_location_assignment PIN_73 -to SBS[0]
+set_location_assignment PIN_74 -to SBS[1]
+set_location_assignment PIN_42 -to SDLDQM
+set_location_assignment PIN_55 -to SDUDQM
+
+set_location_assignment PIN_58 -to SDCKE
+set_location_assignment PIN_43 -to SDCLK
+set_location_assignment PIN_72 -to SDCS
+set_location_assignment PIN_71 -to SDRAS
+set_location_assignment PIN_70 -to SDCAS
+set_location_assignment PIN_69 -to SDWE

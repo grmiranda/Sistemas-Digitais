@@ -1,0 +1,16 @@
+start   0x50a0
+p1x     0x5090
+p1y     0x5080
+p2x     0x5070
+p2y     0x5060
+bx      0x5050
+by      0x5040
+player1 0x5030
+player2 0x5020
+busy    0x5010
+random  0x5000
+
+mult  opcode 2
+div   opcode 0
+lcd   opcode 1
+delay opcode 3

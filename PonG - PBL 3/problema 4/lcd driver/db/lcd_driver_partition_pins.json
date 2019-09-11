@@ -1,0 +1,105 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "done",
+					"strict" : false
+				},
+				{
+					"name" : "rs",
+					"strict" : false
+				},
+				{
+					"name" : "en",
+					"strict" : false
+				},
+				{
+					"name" : "db[0]",
+					"strict" : false
+				},
+				{
+					"name" : "db[1]",
+					"strict" : false
+				},
+				{
+					"name" : "db[2]",
+					"strict" : false
+				},
+				{
+					"name" : "db[3]",
+					"strict" : false
+				},
+				{
+					"name" : "db[4]",
+					"strict" : false
+				},
+				{
+					"name" : "db[5]",
+					"strict" : false
+				},
+				{
+					"name" : "db[6]",
+					"strict" : false
+				},
+				{
+					"name" : "db[7]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clk_en",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "dataa[0]",
+					"strict" : false
+				},
+				{
+					"name" : "start",
+					"strict" : false
+				},
+				{
+					"name" : "datab[0]",
+					"strict" : false
+				},
+				{
+					"name" : "datab[1]",
+					"strict" : false
+				},
+				{
+					"name" : "datab[2]",
+					"strict" : false
+				},
+				{
+					"name" : "datab[3]",
+					"strict" : false
+				},
+				{
+					"name" : "datab[4]",
+					"strict" : false
+				},
+				{
+					"name" : "datab[5]",
+					"strict" : false
+				},
+				{
+					"name" : "datab[6]",
+					"strict" : false
+				},
+				{
+					"name" : "datab[7]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Nov 22 21:41:01 2017
+Quartus Prime Version : 17.0.2 Build 602 07/19/2017 SJ Lite Edition
+Revision Name : pbl3
+Top-level Entity Name : pbl3
+Family : Cyclone IV E
+Device : EP4CE30F23C7
+Timing Models : Final
+Total logic elements : 1,558 / 28,848 ( 5 % )
+    Total combinational functions : 1,444 / 28,848 ( 5 % )
+    Dedicated logic registers : 871 / 28,848 ( 3 % )
+Total registers : 871
+Total pins : 28 / 329 ( 9 % )
+Total virtual pins : 0
+Total memory bits : 43,008 / 608,256 ( 7 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

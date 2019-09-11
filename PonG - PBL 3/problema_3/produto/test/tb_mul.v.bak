@@ -1,0 +1,152 @@
+`timescale 1ns / 1ps
+
+module tb_mul();
+
+    parameter Halfcycle = 5; //half period is 5ns
+
+    localparam Cycle = 2*Halfcycle;
+
+    reg Clock;
+
+    // Clock Signal generation:
+    initial Clock = 0; 
+    always #(1) Clock = ~Clock;
+
+    reg [31:0] A, B;
+    reg [31:0] REFout; 
+    reg start;
+    wire done1;
+    wire done2;
+    wire done3;
+    wire [31:0] DUTout;
+    wire [31:0] DUTout2;
+    wire [31:0] DUTout3;
+
+    // Task for checking output
+    task checkOutput;
+        if ( REFout !== DUTout ) begin
+            $display("FAIL");
+        $finish();
+        end
+        else begin
+            $display("PASS");
+        end
+    endtask
+
+    task checkOutput2;
+        if ( REFout !== DUTout2 ) begin
+            $display("FAIL");
+       // $finish();
+        end
+        else begin
+            $display("PASS");
+        end
+    endtask
+
+    task checkOutput3;
+        if ( REFout !== DUTout3 ) begin
+            $display("FAIL");
+        //$finish();
+        end
+        else begin
+            $display("PASS");
+        end
+    endtask
+
+    reg reset;
+    mul mul (
+        .dataa(A),
+        .datab(B),
+        .result(DUTout),
+        .clk(Clock),
+        .clk_en(1'b1),
+        .start(start),
+        .reset(reset),
+        .done(done1)
+        );
+    
+    div div (
+        .dataa(A),
+        .datab(B),
+        .result(DUTout2),
+        .clk(Clock),
+        .clk_en(1'b1),
+        .start(start),
+        .reset(reset),
+        .done(done2)
+        );
+
+    resto resto (
+        .dataa(A),
+        .datab(B),
+        .result(DUTout3),
+        .clk(Clock),
+        .clk_en(1'b1),
+        .start(start),
+        .reset(reset),
+        .done(done3)
+        );
+
+    localparam testcases = 25;
+    reg [95:0] testvector [0:testcases-1]; // Each testcase has 108 bits:
+    integer i;
+    initial begin
+        $display("\n\nMultiplicacao!");
+        $readmemb("test_mul.txt", testvector);
+        for (i = 0; i < testcases; i = i + 1) begin
+            A      = testvector[i][95:64];
+            B      = testvector[i][63:32];
+            REFout = testvector[i][31:0];
+            start = 1'b0;
+            reset = 1'b1;
+            #2
+            start = 1'b1;
+            reset = 1'b0;
+            #2
+            start = 1'b0;
+            #132
+            checkOutput();
+        end
+        $display("\n\nALL Mult TESTS PASSED!");
+
+        $display("\n\nDivisao!");
+        $readmemb("test_div.txt", testvector);
+        for (i = 0; i < testcases; i = i + 1) begin
+            A      = testvector[i][95:64];
+            B      = testvector[i][63:32];
+            REFout = testvector[i][31:0];
+            start = 1'b0;
+            reset = 1'b1;
+            #2
+            start = 1'b1;
+            reset = 1'b0;
+            #2
+            start = 1'b0;
+            #1000
+            checkOutput2();
+        end
+        $display("\n\nALL div TESTS PASSED!");
+
+        $display("\n\nResto!");
+        $readmemb("test_res.txt", testvector);
+        for (i = 0; i < testcases; i = i + 1) begin
+            A      = testvector[i][95:64];
+            B      = testvector[i][63:32];
+            REFout = testvector[i][31:0];
+            start = 1'b0;
+            reset = 1'b1;
+            #2
+            start = 1'b1;
+            reset = 1'b0;
+            #2
+            start = 1'b0;
+            #1000
+            checkOutput3();
+        end
+        $display("\n\nALL resto TESTS PASSED!");
+
+        $finish();
+    end
+
+endmodule
+

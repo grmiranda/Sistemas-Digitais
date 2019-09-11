@@ -1,0 +1,132 @@
+Flow report for pbl3
+Wed Nov 22 21:42:04 2017
+Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++------------------------------------+---------------------------------------------+
+; Flow Status                        ; Successful - Wed Nov 22 21:42:04 2017       ;
+; Quartus Prime Version              ; 17.0.2 Build 602 07/19/2017 SJ Lite Edition ;
+; Revision Name                      ; pbl3                                        ;
+; Top-level Entity Name              ; pbl3                                        ;
+; Family                             ; Cyclone IV E                                ;
+; Device                             ; EP4CE30F23C7                                ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 1,558 / 28,848 ( 5 % )                      ;
+;     Total combinational functions  ; 1,444 / 28,848 ( 5 % )                      ;
+;     Dedicated logic registers      ; 871 / 28,848 ( 3 % )                        ;
+; Total registers                    ; 871                                         ;
+; Total pins                         ; 28 / 329 ( 9 % )                            ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 43,008 / 608,256 ( 7 % )                    ;
+; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
++------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 11/22/2017 21:39:16 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; pbl3                ;
++-------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                        ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 9474729971539.151139395607024          ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:01:11     ; 1.0                     ; 768 MB              ; 00:01:47                           ;
+; Fitter                    ; 00:00:25     ; 1.0                     ; 1195 MB             ; 00:00:21                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 572 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:06     ; 1.1                     ; 668 MB              ; 00:00:04                           ;
+; MIF/HEX Update            ; 00:00:01     ; 1.0                     ; 613 MB              ; 00:00:01                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 577 MB              ; 00:00:03                           ;
+; Total                     ; 00:01:49     ; --                      ; --                  ; 00:02:19                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                         ;
++---------------------------+------------------+------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++---------------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis      ; DESKTOP-5A2F8TJ  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; DESKTOP-5A2F8TJ  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; DESKTOP-5A2F8TJ  ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-5A2F8TJ  ; Windows 10 ; 10.0       ; x86_64         ;
+; MIF/HEX Update            ; DESKTOP-5A2F8TJ  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; DESKTOP-5A2F8TJ  ; Windows 10 ; 10.0       ; x86_64         ;
++---------------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off pbl3 -c pbl3
+quartus_fit --read_settings_files=off --write_settings_files=off pbl3 -c pbl3
+quartus_asm --read_settings_files=off --write_settings_files=off pbl3 -c pbl3
+quartus_sta pbl3 -c pbl3
+quartus_cdb pbl3 -c pbl3 --update_mif
+quartus_asm --read_settings_files=on --write_settings_files=off pbl3 -c pbl3
+
+
+

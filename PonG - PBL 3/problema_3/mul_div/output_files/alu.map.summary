@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Nov 29 20:45:44 2017
+Quartus Prime Version : 17.0.2 Build 602 07/19/2017 SJ Lite Edition
+Revision Name : alu
+Top-level Entity Name : resto
+Family : Cyclone IV E
+Total logic elements : 320
+    Total combinational functions : 256
+    Dedicated logic registers : 174
+Total registers : 174
+Total pins : 101
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

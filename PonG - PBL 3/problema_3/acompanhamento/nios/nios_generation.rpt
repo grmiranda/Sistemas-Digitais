@@ -1,0 +1,100 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\Havallon\Desktop\acompanhamento\nios.qsys --block-symbol-file --output-directory=C:\Users\Havallon\Desktop\acompanhamento\nios --family="Cyclone IV E" --part=EP4CE30F23C7
+Progress: Loading acompanhamento/nios.qsys
+Progress: Reading input file
+Progress: Adding clk [clock_source 17.0]
+Progress: Parameterizing module clk
+Progress: Adding led [altera_avalon_pio 17.0]
+Progress: Parameterizing module led
+Progress: Adding memoria [altera_avalon_onchip_memory2 17.0]
+Progress: Parameterizing module memoria
+Progress: Adding nios [altera_nios2_gen2 17.0]
+Progress: Parameterizing module nios
+Progress: Adding rs232 [altera_avalon_uart 17.0]
+Progress: Parameterizing module rs232
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\Havallon\Desktop\acompanhamento\nios.qsys --synthesis=VERILOG --output-directory=C:\Users\Havallon\Desktop\acompanhamento\nios\synthesis --family="Cyclone IV E" --part=EP4CE30F23C7
+Progress: Loading acompanhamento/nios.qsys
+Progress: Reading input file
+Progress: Adding clk [clock_source 17.0]
+Progress: Parameterizing module clk
+Progress: Adding led [altera_avalon_pio 17.0]
+Progress: Parameterizing module led
+Progress: Adding memoria [altera_avalon_onchip_memory2 17.0]
+Progress: Parameterizing module memoria
+Progress: Adding nios [altera_nios2_gen2 17.0]
+Progress: Parameterizing module nios
+Progress: Adding rs232 [altera_avalon_uart 17.0]
+Progress: Parameterizing module rs232
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: nios: Generating nios "nios" for QUARTUS_SYNTH
+Info: led: Starting RTL generation for module 'nios_led'
+Info: led:   Generation command is [exec C:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_led --dir=C:/Users/Havallon/AppData/Local/Temp/alt7492_1351249320261605991.dir/0002_led_gen/ --quartus_dir=C:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/Havallon/AppData/Local/Temp/alt7492_1351249320261605991.dir/0002_led_gen//nios_led_component_configuration.pl  --do_build_sim=0  ]
+Info: led: Done RTL generation for module 'nios_led'
+Info: led: "nios" instantiated altera_avalon_pio "led"
+Info: memoria: Starting RTL generation for module 'nios_memoria'
+Info: memoria:   Generation command is [exec C:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=nios_memoria --dir=C:/Users/Havallon/AppData/Local/Temp/alt7492_1351249320261605991.dir/0003_memoria_gen/ --quartus_dir=C:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/Havallon/AppData/Local/Temp/alt7492_1351249320261605991.dir/0003_memoria_gen//nios_memoria_component_configuration.pl  --do_build_sim=0  ]
+Info: memoria: Done RTL generation for module 'nios_memoria'
+Info: memoria: "nios" instantiated altera_avalon_onchip_memory2 "memoria"
+Info: nios: "nios" instantiated altera_nios2_gen2 "nios"
+Info: rs232: Starting RTL generation for module 'nios_rs232'
+Info: rs232:   Generation command is [exec C:/intelfpga_lite/17.0/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.0/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart -- C:/intelfpga_lite/17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart/generate_rtl.pl --name=nios_rs232 --dir=C:/Users/Havallon/AppData/Local/Temp/alt7492_1351249320261605991.dir/0004_rs232_gen/ --quartus_dir=C:/intelfpga_lite/17.0/quartus --verilog --config=C:/Users/Havallon/AppData/Local/Temp/alt7492_1351249320261605991.dir/0004_rs232_gen//nios_rs232_component_configuration.pl  --do_build_sim=0  ]
+Info: rs232: Done RTL generation for module 'nios_rs232'
+Info: rs232: "nios" instantiated altera_avalon_uart "rs232"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "nios" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "nios" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "nios" instantiated altera_reset_controller "rst_controller"
+Info: cpu: Starting RTL generation for module 'nios_nios_cpu'
+Info: cpu:   Generation command is [exec C:/intelFPGA_lite/17.0/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/17.0/quartus/bin64//perl/lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.0/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/17.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/17.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/17.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/17.0/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=nios_nios_cpu --dir=C:/Users/Havallon/AppData/Local/Temp/alt7492_1351249320261605991.dir/0007_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/17.0/quartus/bin64/ --verilog --config=C:/Users/Havallon/AppData/Local/Temp/alt7492_1351249320261605991.dir/0007_cpu_gen//nios_nios_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2017.11.22 21:30:30 (*) Starting Nios II generation
+Info: cpu: # 2017.11.22 21:30:30 (*)   Checking for plaintext license.
+Info: cpu: # 2017.11.22 21:30:34 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/17.0/quartus/bin64/
+Info: cpu: # 2017.11.22 21:30:34 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2017.11.22 21:30:34 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2017.11.22 21:30:34 (*)   Plaintext license not found.
+Info: cpu: # 2017.11.22 21:30:34 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2017.11.22 21:30:34 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2017.11.22 21:30:34 (*)   Creating all objects for CPU
+Info: cpu: # 2017.11.22 21:30:36 (*)   Generating RTL from CPU objects
+Info: cpu: # 2017.11.22 21:30:36 (*)   Creating plain-text RTL
+Info: cpu: # 2017.11.22 21:30:37 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'nios_nios_cpu'
+Info: cpu: "nios" instantiated altera_nios2_gen2_unit "cpu"
+Info: nios_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios_data_master_translator"
+Info: nios_debug_mem_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "nios_debug_mem_slave_translator"
+Info: nios_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "nios_data_master_agent"
+Info: nios_debug_mem_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "nios_debug_mem_slave_agent"
+Info: nios_debug_mem_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "nios_debug_mem_slave_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
+Info: Reusing file C:/Users/Havallon/Desktop/acompanhamento/nios/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/Users/Havallon/Desktop/acompanhamento/nios/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file C:/Users/Havallon/Desktop/acompanhamento/nios/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: nios: Done "nios" with 27 modules, 39 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

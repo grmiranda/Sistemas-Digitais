@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sat Aug 24 00:44:48 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : vgaDriver
+Top-level Entity Name : vgaDriver
+Family : Cyclone IV E
+Device : EP4CE30F23C7
+Timing Models : Final
+Total logic elements : 328 / 28,848 ( 1 % )
+    Total combinational functions : 295 / 28,848 ( 1 % )
+    Dedicated logic registers : 97 / 28,848 ( < 1 % )
+Total registers : 97
+Total pins : 76 / 329 ( 23 % )
+Total virtual pins : 0
+Total memory bits : 1,568 / 608,256 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

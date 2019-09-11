@@ -1,0 +1,101 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "VGA_HS",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_VS",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_B",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_D[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_D[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_D[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_D[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_D[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_D[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_D[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_D[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_EN",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_RS",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clock_50MHz",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[1]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[2]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[3]",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

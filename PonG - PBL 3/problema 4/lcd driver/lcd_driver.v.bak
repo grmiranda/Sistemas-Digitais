@@ -1,0 +1,19 @@
+//Modulo para multiplicao
+//Algortimo do livro computer organization and desing interface hardware/software
+//Autores Crystal e Havallon
+// 25/11/2017
+module mul (dataa, datab, result, clk, clk_en, start, reset, done);
+
+	input [31:0] dataa;
+	input [31:0] datab;
+	input clk;
+	input clk_en;
+	input start;
+	input reset;
+	
+	output reg [31:0] result;
+	output reg done;
+	
+
+
+endmodule

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Nov 22 21:40:31 2017
+Quartus Prime Version : 17.0.2 Build 602 07/19/2017 SJ Lite Edition
+Revision Name : pbl3
+Top-level Entity Name : pbl3
+Family : Cyclone IV E
+Total logic elements : 1,633
+    Total combinational functions : 1,438
+    Dedicated logic registers : 871
+Total registers : 871
+Total pins : 28
+Total virtual pins : 0
+Total memory bits : 43,008
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
