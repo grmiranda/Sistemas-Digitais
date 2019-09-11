@@ -273,6 +273,22 @@
          type = "String";
       }
    }
+   element rs232_0
+   {
+      datum _sortIndex
+      {
+         value = "20";
+         type = "int";
+      }
+   }
+   element rs232_0.avalon_rs232_slave
+   {
+      datum baseAddress
+      {
+         value = "20656";
+         type = "String";
+      }
+   }
    element start
    {
       datum _sortIndex
@@ -354,6 +370,11 @@
  <interface
    name="random"
    internal="random.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="rs232"
+   internal="rs232_0.external_interface"
    type="conduit"
    dir="end" />
  <interface
@@ -493,7 +514,7 @@
   <parameter name="dataAddrWidth" value="15" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='memory.s1' start='0x2000' end='0x4000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios.debug_mem_slave' start='0x4800' end='0x5000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='jogador2.s1' start='0x5000' end='0x5010' type='altera_avalon_pio.s1' /><slave name='jogador1.s1' start='0x5010' end='0x5020' type='altera_avalon_pio.s1' /><slave name='random.s1' start='0x5020' end='0x5030' type='altera_avalon_pio.s1' /><slave name='busy.s1' start='0x5030' end='0x5040' type='altera_avalon_pio.s1' /><slave name='by.s1' start='0x5040' end='0x5050' type='altera_avalon_pio.s1' /><slave name='bx.s1' start='0x5050' end='0x5060' type='altera_avalon_pio.s1' /><slave name='p2y.s1' start='0x5060' end='0x5070' type='altera_avalon_pio.s1' /><slave name='p2x.s1' start='0x5070' end='0x5080' type='altera_avalon_pio.s1' /><slave name='p1y.s1' start='0x5080' end='0x5090' type='altera_avalon_pio.s1' /><slave name='p1x.s1' start='0x5090' end='0x50A0' type='altera_avalon_pio.s1' /><slave name='start.s1' start='0x50A0' end='0x50B0' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='memory.s1' start='0x2000' end='0x4000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios.debug_mem_slave' start='0x4800' end='0x5000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='jogador2.s1' start='0x5000' end='0x5010' type='altera_avalon_pio.s1' /><slave name='jogador1.s1' start='0x5010' end='0x5020' type='altera_avalon_pio.s1' /><slave name='random.s1' start='0x5020' end='0x5030' type='altera_avalon_pio.s1' /><slave name='busy.s1' start='0x5030' end='0x5040' type='altera_avalon_pio.s1' /><slave name='by.s1' start='0x5040' end='0x5050' type='altera_avalon_pio.s1' /><slave name='bx.s1' start='0x5050' end='0x5060' type='altera_avalon_pio.s1' /><slave name='p2y.s1' start='0x5060' end='0x5070' type='altera_avalon_pio.s1' /><slave name='p2x.s1' start='0x5070' end='0x5080' type='altera_avalon_pio.s1' /><slave name='p1y.s1' start='0x5080' end='0x5090' type='altera_avalon_pio.s1' /><slave name='p1x.s1' start='0x5090' end='0x50A0' type='altera_avalon_pio.s1' /><slave name='start.s1' start='0x50A0' end='0x50B0' type='altera_avalon_pio.s1' /><slave name='rs232_0.avalon_rs232_slave' start='0x50B0' end='0x50B8' type='altera_up_avalon_rs232.avalon_rs232_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -749,6 +770,19 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="2" />
  </module>
+ <module
+   name="rs232_0"
+   kind="altera_up_avalon_rs232"
+   version="17.0"
+   enabled="1">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="avalon_bus_type" value="Memory Mapped" />
+  <parameter name="baud" value="9600" />
+  <parameter name="data_bits" value="8" />
+  <parameter name="parity" value="None" />
+  <parameter name="stop_bits" value="1" />
+ </module>
  <module name="start" kind="altera_avalon_pio" version="17.0" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
@@ -763,6 +797,15 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="1" />
  </module>
+ <connection
+   kind="avalon"
+   version="17.0"
+   start="nios.data_master"
+   end="rs232_0.avalon_rs232_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x50b0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
  <connection
    kind="avalon"
    version="17.0"
@@ -890,6 +933,7 @@
  <connection kind="clock" version="17.0" start="clk.clk" end="nios.clk" />
  <connection kind="clock" version="17.0" start="clk.clk" end="jogador1.clk" />
  <connection kind="clock" version="17.0" start="clk.clk" end="jogador2.clk" />
+ <connection kind="clock" version="17.0" start="clk.clk" end="rs232_0.clk" />
  <connection kind="clock" version="17.0" start="clk.clk" end="memory.clk1" />
  <connection
    kind="nios_custom_instruction"
@@ -953,6 +997,7 @@
    version="17.0"
    start="clk.clk_reset"
    end="jogador2.reset" />
+ <connection kind="reset" version="17.0" start="clk.clk_reset" end="rs232_0.reset" />
  <connection kind="reset" version="17.0" start="clk.clk_reset" end="memory.reset1" />
  <connection
    kind="reset"
@@ -1029,6 +1074,11 @@
    version="17.0"
    start="nios.debug_reset_request"
    end="jogador2.reset" />
+ <connection
+   kind="reset"
+   version="17.0"
+   start="nios.debug_reset_request"
+   end="rs232_0.reset" />
  <connection
    kind="reset"
    version="17.0"

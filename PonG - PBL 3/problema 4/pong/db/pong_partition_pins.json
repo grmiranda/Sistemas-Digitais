@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "TX",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_HS",
 					"strict" : false
 				},
@@ -60,15 +64,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "KEY[0]",
-					"strict" : false
-				},
-				{
 					"name" : "clock_50MHz",
 					"strict" : false
 				},
 				{
-					"name" : "KEY[1]",
+					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[3]",
 					"strict" : false
 				},
 				{
@@ -76,7 +80,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "KEY[3]",
+					"name" : "KEY[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RX",
 					"strict" : false
 				},
 				{

@@ -1,3 +1,4 @@
+#PonG
 .data
 	.equ START, 0x50a0
 	.equ P1X, 0x5090
@@ -9,6 +10,7 @@
 	.equ PLAYER1, 0x5010
 	.equ PLAYER2, 0x5000
 	.equ RND, 0x5020
+	.equ UART, 0x50b0
 .text
 
 .global main
@@ -24,6 +26,15 @@
 
 # Rotina principal de inicialização
 main:
+	movi r2, 0x1
+	instr r2
+main2:
+	addi r2, zero, 0x31 # 1 
+    call PUT_CHAR
+	br main2
+	br end
+	call GET_CHAR
+
 	call resetBall 	# Inicializa a bolla (Centraliza)
 	call resetBarra # Inicializa as barras (Centraliza)
 	call initLCD	# Inicializa o LCD
@@ -630,6 +641,45 @@ win2:
 	br gameOver
 
 # ------------------------------------------------------------------------
+
+# Rotina para ler um caractere da RS232 UART.
+   # r6 = endereço base RS232 UART
+   # Retorna o caractere em r2. Retorna "\ 0" se não houver novo caractere na fila RX FIFO.
+GET_CHAR:
+   movi r6, UART
+   ldwio r2, 0(r6)                 # read the RS232 UART Data register 
+   andi r8, r2, 0x8000             # check if there is new data 
+   bne r8, r0, RETURN_CHAR
+   mov r2, r0                      # if no new data, return ‘\0’ 
+RETURN_CHAR:
+   andi r8, r2, 0x00ff             # the data is in the least significant byte 
+   mov r2, r8                      # set r2 with the return value 
+
+   #Exibe dado de retorno do ESP no Display
+	data r2
+FIM_CHAR:
+   bne r2, zero, GET_CHAR          # Verifica se r2 é diferente de 0, caso seja ainda existem dados para ser lidos na uart
+   ret
+#----------------------------------------------------------------
+# Sub-rotina para enviar um caracter para o RS232 UART.
+    # r6 = endereço base RS232 UART
+    # r2 = character to send
+PUT_CHAR:
+   #delay 200ms
+   movi r6, UART
+   movia r9, 0xCB735               # Setando o DELAY 200ms
+   add r8, zero, zero				# Zera o registrador r8, adiciona +1us
+   d200:
+   addi r8, r8, 1       	   		# adiciona um ao contador
+   bne r8, r9, d200	            # continua chamando a label
+
+   ldwio r11, 4(r6)                 # ler o registrador de controle da UART RS232
+   andhi r11, r11, 0x00ff            # verifica o espaço de escrita
+   beq r11, r0, END_PUT             # se não houver espaço, ignora o caractere 
+   stwio r2, 0(r6)                 # envia o caractere 
+   data r2
+END_PUT:
+    ret
 
 end:
 	br end

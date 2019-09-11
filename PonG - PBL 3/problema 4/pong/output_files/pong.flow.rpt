@@ -1,5 +1,5 @@
 Flow report for pong
-Mon Sep 09 15:14:20 2019
+Wed Sep 11 15:27:55 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,20 +41,20 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Sep 09 15:14:14 2019       ;
+; Flow Status                        ; Successful - Wed Sep 11 15:27:48 2019       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; pong                                        ;
 ; Top-level Entity Name              ; pong                                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE6E22C8                                 ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2,533 / 6,272 ( 40 % )                      ;
-;     Total combinational functions  ; 2,356 / 6,272 ( 38 % )                      ;
-;     Dedicated logic registers      ; 1,399 / 6,272 ( 22 % )                      ;
-; Total registers                    ; 1399                                        ;
-; Total pins                         ; 30 / 92 ( 33 % )                            ;
+; Total logic elements               ; 2,804 / 6,272 ( 45 % )                      ;
+;     Total combinational functions  ; 2,615 / 6,272 ( 42 % )                      ;
+;     Dedicated logic registers      ; 1,575 / 6,272 ( 25 % )                      ;
+; Total registers                    ; 1575                                        ;
+; Total pins                         ; 32 / 92 ( 35 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 75,776 / 276,480 ( 27 % )                   ;
+; Total memory bits                  ; 77,824 / 276,480 ( 28 % )                   ;
 ; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                              ;
 ; Total PLLs                         ; 0 / 2 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/09/2019 15:12:49 ;
+; Start date & time ; 09/11/2019 15:26:07 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; pong                ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 40637542857006.156805276902904         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 25244380043611.156822636706620         ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; barrasprite_bb.v                       ; --            ; --          ; --         ;
@@ -99,11 +99,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:02     ; 1.0                     ; 4924 MB             ; 00:01:50                           ;
-; Fitter                    ; 00:00:16     ; 1.1                     ; 5259 MB             ; 00:00:19                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4684 MB             ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.1                     ; 4762 MB             ; 00:00:05                           ;
-; Total                     ; 00:01:25     ; --                      ; --                  ; 00:02:16                           ;
+; Analysis & Synthesis      ; 00:01:12     ; 1.0                     ; 4936 MB             ; 00:01:58                           ;
+; Fitter                    ; 00:00:20     ; 1.1                     ; 5268 MB             ; 00:00:23                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 4684 MB             ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:06     ; 1.2                     ; 4768 MB             ; 00:00:06                           ;
+; Total                     ; 00:01:41     ; --                      ; --                  ; 00:02:29                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

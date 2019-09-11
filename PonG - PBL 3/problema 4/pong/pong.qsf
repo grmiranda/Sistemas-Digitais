@@ -77,6 +77,26 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_UB
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_104 -to VGA_B
+set_location_assignment PIN_105 -to VGA_G
+set_location_assignment PIN_106 -to VGA_R
+set_global_assignment -name ENABLE_OCT_DONE OFF
+set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
+set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
+set_global_assignment -name STRATIXV_CONFIGURATION_SCHEME "PASSIVE SERIAL"
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name VERILOG_FILE nios/synthesis/submodules/nios_rs232_0.v
+set_global_assignment -name SYSTEMVERILOG_FILE nios/synthesis/submodules/nios_mm_interconnect_0_rsp_demux.sv
+set_global_assignment -name VERILOG_FILE nios/synthesis/submodules/altera_up_sync_fifo.v
+set_global_assignment -name VERILOG_FILE nios/synthesis/submodules/altera_up_rs232_out_serializer.v
+set_global_assignment -name VERILOG_FILE nios/synthesis/submodules/altera_up_rs232_in_deserializer.v
+set_global_assignment -name VERILOG_FILE nios/synthesis/submodules/altera_up_rs232_counters.v
 set_global_assignment -name VERILOG_FILE nios/synthesis/submodules/nios_random.v
 set_global_assignment -name SYSTEMVERILOG_FILE nios/synthesis/submodules/nios_mm_interconnect_0_rsp_demux_001.sv
 set_global_assignment -name SYSTEMVERILOG_FILE nios/synthesis/submodules/nios_mm_interconnect_0_router_003.sv
@@ -133,18 +153,6 @@ set_global_assignment -name VERILOG_FILE pong.v
 set_global_assignment -name QIP_FILE barrasprite.qip
 set_global_assignment -name QIP_FILE bolasprite.qip
 set_global_assignment -name VERILOG_FILE random.v
-set_location_assignment PIN_104 -to VGA_B
-set_location_assignment PIN_105 -to VGA_G
-set_location_assignment PIN_106 -to VGA_R
-set_global_assignment -name ENABLE_OCT_DONE OFF
-set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
-set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
-set_global_assignment -name STRATIXV_CONFIGURATION_SCHEME "PASSIVE SERIAL"
-set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
-set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
-set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
-set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
-set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
-set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
-set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_location_assignment PIN_115 -to RX
+set_location_assignment PIN_114 -to TX
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

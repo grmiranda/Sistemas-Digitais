@@ -1,8 +1,12 @@
-module pong(clock_50MHz, KEY, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B, LCD_D, LCD_EN, LCD_RS, LCD_RW,ADC_DOUT, ADC_CNVST, ADC_CS_N, ADC_REFSEL, ADC_SCLK, ADC_SD, ADC_UB,ADC_SEL);
+module pong(clock_50MHz, KEY, RX, TX, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B, LCD_D, LCD_EN, LCD_RS, LCD_RW,ADC_DOUT, ADC_CNVST, ADC_CS_N, ADC_REFSEL, ADC_SCLK, ADC_SD, ADC_UB,ADC_SEL);
 
 	input clock_50MHz;
 	input [3:0] KEY; //Push buttons
 	input [1:0]ADC_DOUT;
+	
+	// SERIAL
+	input RX;
+	output TX;
 	
 	//Conversor AD
 	output ADC_CNVST;
@@ -77,12 +81,12 @@ module pong(clock_50MHz, KEY, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B, LCD_D, LCD_EN
         .jogador2_export (~KEY[3]), // jogador2.export
         //.reset_reset_n   (~KEY[0]),   //    reset.reset_n
         .start_export    (~KEY[1]),    //    start.export
-        .random_export   (rnd)    //   random.export
+        .random_export   (rnd),    //   random.export
+		  .rs232_RXD       (RX),       //    rs232.RXD
+        .rs232_TXD       (TX)        //         .TXD
     );
-	 	
-	//.player1_export  (~KEY[2]/*player1*/),  //  player1.export
-   //.player_2_export (~KEY[3]/*player2*/), // player_2.export
-	
+	 
+		
 	//Driver de randomização
 	random random (
 		.clk(clock_50MHz),

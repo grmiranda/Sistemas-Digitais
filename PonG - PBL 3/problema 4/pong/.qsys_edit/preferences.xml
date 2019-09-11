@@ -8,7 +8,7 @@
   </columns>
  </systemtable>
  <library
-   expandedCategories="Library/Processors and Peripherals,Library,Library/Interface Protocols,Library/Processors and Peripherals/Peripherals,Library/Interface Protocols/PCI Express,Library/Interface Protocols/PCI Express/QSYS Example Designs,Project" />
- <window width="1366" height="728" x="0" y="0" />
+   expandedCategories="Library/Interface Protocols/Serial,Library/University Program/Communications,Library/University Program,Library/Interface Protocols,Library,Project" />
+ <window width="1382" height="744" x="-8" y="-8" />
  <hdlexample language="VERILOG" />
 </preferences>
