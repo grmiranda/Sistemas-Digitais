@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="nios" kind="nios" version="1.0" fabric="QSYS">
  <!-- Format version 17.0 595 (Future versions may contain additional information.) -->
- <!-- 2019.09.11.14:41:43 -->
+ <!-- 2019.09.14.15:33:32 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1568223703</value>
+  <value>1568486011</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -13153,7 +13153,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="baud">
    <type>int</type>
-   <value>9600</value>
+   <value>115200</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>

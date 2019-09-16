@@ -7,8 +7,7 @@
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library/Interface Protocols/Serial,Library/University Program/Communications,Library/University Program,Library/Interface Protocols,Library,Project" />
- <window width="1382" height="744" x="-8" y="-8" />
+ <library expandedCategories="Library,Project" />
+ <window width="1366" height="728" x="0" y="0" />
  <hdlexample language="VERILOG" />
 </preferences>

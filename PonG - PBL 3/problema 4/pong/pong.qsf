@@ -91,6 +91,8 @@ set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_location_assignment PIN_115 -to RX
+set_location_assignment PIN_114 -to TX
 set_global_assignment -name VERILOG_FILE nios/synthesis/submodules/nios_rs232_0.v
 set_global_assignment -name SYSTEMVERILOG_FILE nios/synthesis/submodules/nios_mm_interconnect_0_rsp_demux.sv
 set_global_assignment -name VERILOG_FILE nios/synthesis/submodules/altera_up_sync_fifo.v
@@ -153,6 +155,4 @@ set_global_assignment -name VERILOG_FILE pong.v
 set_global_assignment -name QIP_FILE barrasprite.qip
 set_global_assignment -name QIP_FILE bolasprite.qip
 set_global_assignment -name VERILOG_FILE random.v
-set_location_assignment PIN_115 -to RX
-set_location_assignment PIN_114 -to TX
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

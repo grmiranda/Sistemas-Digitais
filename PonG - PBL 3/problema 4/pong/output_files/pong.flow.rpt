@@ -1,5 +1,5 @@
 Flow report for pong
-Wed Sep 11 15:27:55 2019
+Sun Sep 15 04:04:54 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,17 +41,17 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Sep 11 15:27:48 2019       ;
+; Flow Status                        ; Successful - Sun Sep 15 04:04:47 2019       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; pong                                        ;
 ; Top-level Entity Name              ; pong                                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE6E22C8                                 ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2,804 / 6,272 ( 45 % )                      ;
-;     Total combinational functions  ; 2,615 / 6,272 ( 42 % )                      ;
-;     Dedicated logic registers      ; 1,575 / 6,272 ( 25 % )                      ;
-; Total registers                    ; 1575                                        ;
+; Total logic elements               ; 2,777 / 6,272 ( 44 % )                      ;
+;     Total combinational functions  ; 2,599 / 6,272 ( 41 % )                      ;
+;     Dedicated logic registers      ; 1,567 / 6,272 ( 25 % )                      ;
+; Total registers                    ; 1567                                        ;
 ; Total pins                         ; 32 / 92 ( 35 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 77,824 / 276,480 ( 28 % )                   ;
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/11/2019 15:26:07 ;
+; Start date & time ; 09/15/2019 04:03:17 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; pong                ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 25244380043611.156822636706620         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 40637542857006.156853099706120         ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; barrasprite_bb.v                       ; --            ; --          ; --         ;
@@ -99,11 +99,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:12     ; 1.0                     ; 4936 MB             ; 00:01:58                           ;
-; Fitter                    ; 00:00:20     ; 1.1                     ; 5268 MB             ; 00:00:23                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 4684 MB             ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:06     ; 1.2                     ; 4768 MB             ; 00:00:06                           ;
-; Total                     ; 00:01:41     ; --                      ; --                  ; 00:02:29                           ;
+; Analysis & Synthesis      ; 00:01:05     ; 1.0                     ; 4933 MB             ; 00:01:50                           ;
+; Fitter                    ; 00:00:17     ; 1.1                     ; 5268 MB             ; 00:00:21                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4684 MB             ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.1                     ; 4766 MB             ; 00:00:05                           ;
+; Total                     ; 00:01:29     ; --                      ; --                  ; 00:02:19                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -64,24 +64,24 @@ gameLoop:
 # Rotinas referentes a bola ----------------------------------------------------------------
 # Envia para o módulo VGA a posição em que deve-se desenhar a bola
 moveBall:
-	add r5,r5,r7		# Add posição x da bola + velocidade horizontal (x) atual
-	add r6,r6,r8		# Add posição y da bola + velocidade vertical (y) atual
+	add r5,r5,r7
+	add r6,r6,r8
 	movia r12, BX
-	stwio r5, 0(r12)	# Salva a posição x atualizada (r5) no endereço de memória x da bola
+	stwio r5, 0(r12)
 	movia r12, BY
-	stwio r6, 0(r12)	# Salva a posição y atualizada (r6) no endereço de memória y da bola
+	stwio r6, 0(r12)
 	ret
 
 # Reseta a posição da bola centralizando-a.
 resetBall:
 	movia r12, BX
-	movi r4, 316
-	stwio r4, 0(r12)
+	movi r1, 316
+	stwio r1, 0(r12)
 	movia r12, BY
-	movi r4, 236
-	stwio r4, 0(r12)
-	movi r5, 316 # Centro X da bola
-	movi r6, 236 # Centro Y da bola	
+	movi r1, 236
+	stwio r1, 0(r12)
+	movi r5, 316 # X da bola
+	movi r6, 236 # Y da bola	
 	ret
 # ------------------------------------------------------------------------------------------
 
@@ -89,229 +89,268 @@ resetBall:
 # Centraliza a barra (Usado somente na inicialização do sistema.)
 resetBarra:
 	#Valor para centralizar barras
-	movi r2, 196
+	movi r18, 196
 	
 	# Barra Player 1 (Esquerda)
-	movi r3, 5 			# Eixo x fixo para a barra
-	movia r13, P1X 		
-	stwio r3, 0(r13)	# Salva o valor do centro X (r2) na memória da barra 1
-	movia r13, P1Y
-	stwio r2, 0(r13)	# Salva o valor do centro Y (r2) na memória da barra 1
-	
+	movi r3, 5 # Eixo x fixo para a barra
+	movia r12, P1X
+	stwio r3, 0(r12)
+	movia r12, P1Y
+	stwio r18, 0(r12)
 	# Barra Player 2 (Direita)
-	movia r3, 620 		# Eixo x fixo para a barra
-	movia r13, P2X
-	stwio r3, 0(r13)	# Salva o valor do centro X (r2) na memória da barra 2
-	movia r13, P2Y
-	stwio r2, 0(r13)	# Salva o valor do centro Y (r2) na memória da barra 1
+	movia r3, 620 # Eixo x fixo para a barra
+	movia r12, P2X
+	stwio r3, 0(r12)
+	movia r12, P2Y
+	stwio r18, 0(r12)
 	ret
 
 # Realiza a movimentação da barra de acordo com o posicionamento do potenciometro, 
 # após isso envia para o módulo VGA a posição da barra para o mesmo desenhar na tela
 moverBarra:
 	#Valores da barra: Min: 8 Max: 392
-	stw ra, 4(sp)	# Guarda o contexto de retorno do fluxo de execução
-
-	call GET_CHAR	# Chama label de leitura da UART para ler os valores dos potenciometros
+	#TA PERDENDO REFERENCIA DE RETORNO!!
+	stw ra, 4(sp)
+lerUART:
+	call GET_CHAR
 	movi r3, 0x41
-	beq r17, r3, valorP1 # Verifica se o valor lido é um "A", se for, chama label que verifica qual número lido para o jogador 1
+	beq r17, r3, valorP1 #verifica se o valor lido é um "A"
 	movi r3, 0x42
-	beq r17, r3, valorP2 # Verifica se o valor lido é um "B", se for, chama a label que verifica qual número lido para o jogador 2
+	beq r17, r3, valorP2 #verifica se o valor lido é um "B"
 	br gameLoop
 
-# Verifica qual valor recebido do potênciometro (0 - 9) + 1 e guarda a porcentagem do valor Y da tela
 valorP1:
 	call GET_CHAR
 	movi r3, 0x30
-	bne r17, r3, p1veri1 #verifica se o valor recebido é 0 e salva 10% do valor total de X no registrador
-	movi r18, 8
-	br trataDados  
+	bne r17, r3, p1veri1 #verifica se o valor recebido é 0 e salva 1 no registrador
+	movi r18, 38
+	br fim_verip1  
 p1veri1:
 	movi r3, 0x31
-	bne r17, r3, p1veri2 #verifica se o valor recebido é 1 e salva 20% do valor total de X no registrador
+	bne r17, r3, p1veri2 #verifica se o valor recebido é 1 e salva 2 no registrador
 	movi r18, 76
-	br trataDados
+	br fim_verip1
 p1veri2:
 	movi r3, 0x32
-	bne r17, r3, p1veri3 #verifica se o valor recebido é 2 e salva 30% do valor total de X no registrador
+	bne r17, r3, p1veri3 #verifica se o valor recebido é 2 e salva 1 no registrador
 	movi r18, 115
-	br trataDados
+	br fim_verip1
 p1veri3:
 	movi r3, 0x3
-	bne r17, r3, p1veri4 #verifica se o valor recebido é 3 e salva 40% do valor total de X no registrador
+	bne r17, r3, p1veri4 #verifica se o valor recebido é 3 e salva 4 no registrador
 	movi r18, 153
-	br trataDados
+	br fim_verip1
 p1veri4:
 	movi r3, 0x34
-	bne r17, r3, p1veri5 #verifica se o valor recebido é 4 e salva 50% do valor total de X no registrador
+	bne r17, r3, p1veri5 #verifica se o valor recebido é 4 e salva 5 no registrador
 	movi r18, 192
-	br trataDados
+	br fim_verip1
 p1veri5:
 	movi r3, 0x35
-	bne r17, r3, p1veri6 #verifica se o valor recebido é 5 e salva 60% do valor total de X no registrador
+	bne r17, r3, p1veri6 #verifica se o valor recebido é 5 e salva 6 no registrador
 	movi r18, 230
-	br trataDados
+	br fim_verip1
 p1veri6:
 	movi r3, 0x36
-	bne r17, r3, p1veri7 #verifica se o valor recebido é 6 e salva 70% do valor total de X no registrador
+	bne r17, r3, p1veri7 #verifica se o valor recebido é 6 e salva 7 no registrador
 	movi r18, 268
-	br trataDados
+	br fim_verip1
 p1veri7:
 	movi r3, 0x37
-	bne r17, r3, p1veri8 #verifica se o valor recebido é 7 e salva 80% do valor total de X no registrador
+	bne r17, r3, p1veri8 #verifica se o valor recebido é 7 e salva 8 no registrador
 	movi r18, 307
-	br trataDados
+	br fim_verip1
 p1veri8:
 	movi r3, 0x38
-	bne r17, r3, p1veri9 #verifica se o valor recebido é 8 e salva 90% do valor total de X no registrador
+	bne r17, r3, p1veri9 #verifica se o valor recebido é 8 e salva 9 no registrador
 	movi r18, 345
-	br trataDados
+	br fim_verip1
 p1veri9:
 	movi r3, 0x39
-	bne r17, r3, gameLoop #valorP1 #verifica se o valor recebido é 9 e salva 100% do valor total de X no registrador
-	movi r18, 392
+	bne r17, r3, fim_verip1 #valorP1 #verifica se o valor recebido é 9 e salva 10 no registrador
+	movi r18, 384
+	br fim_verip1
+fim_verip1:
 	br trataDados
-
-# Verifica qual valor recebido do potênciometro (0 - 9) + 1 e guarda a porcentagem do valor Y da tela
+/*lerB:
+	# ler B e dado do player 2
+	call GET_CHAR
+	movi r3, 0x42
+	bne r17, r3, gameLoop #verifica se o valor lido é um "B"
+*/
 valorP2:
 	call GET_CHAR
 	movi r3, 0x30
-	bne r17, r3, p2veri1 #verifica se o valor recebido é 0 e salva 10% do valor total de Y no registrador
+	bne r17, r3, p2veri1 #verifica se o valor recebido é 0 e salva 1 no registrador
 	#movi r2, 1
-	movi r19, 8
-	br trataDados  
+	movi r19, 38
+	br fim_verip2  
 p2veri1:
 	movi r3, 0x31
-	bne r17, r3, p2veri2 #verifica se o valor recebido é 1 e salva 20% do valor total de Y no registrador
+	bne r17, r3, p2veri2 #verifica se o valor recebido é 1 e salva 2 no registrador
 	#movi r2, 2
 	movi r19, 76
-	br trataDados
+	br fim_verip2
 p2veri2:
 	movi r3, 0x32
-	bne r17, r3, p2veri3 #verifica se o valor recebido é 2 e salva 30% do valor total de Y no registrador
+	bne r17, r3, p2veri3 #verifica se o valor recebido é 2 e salva 1 no registrador
 	#movi r2, 3
 	movi r19, 115
-	br trataDados
+	br fim_verip2
 p2veri3:
 	movi r3, 0x33
-	bne r17, r3, p2veri4 #verifica se o valor recebido é 3 e salva 40% do valor total de Y no registrador
+	bne r17, r3, p2veri4 #verifica se o valor recebido é 3 e salva 4 no registrador
 	#movi r2, 4
 	movi r19, 153
-	br trataDados
+	br fim_verip2
 p2veri4:
 	movi r3, 0x34
-	bne r17, r3, p2veri5 #verifica se o valor recebido é 4 e salva 50% do valor total de Y no registrador
+	bne r17, r3, p2veri5 #verifica se o valor recebido é 4 e salva 5 no registrador
 	#movi r2, 5
 	movi r19, 192
-	br trataDados
+	br fim_verip2
 p2veri5:
 	movi r3, 0x35
-	bne r17, r3, p2veri6 #verifica se o valor recebido é 5 e salva 60% do valor total de Y no registrador
+	bne r17, r3, p2veri6 #verifica se o valor recebido é 5 e salva 6 no registrador
 	#movi r2, 6
 	movi r19, 230
-	br trataDados
+	br fim_verip2
 p2veri6:
 	movi r3, 0x36
-	bne r17, r3, p2veri7 #verifica se o valor recebido é 6 e salva 70% do valor total de Y no registrador
+	bne r17, r3, p2veri7 #verifica se o valor recebido é 6 e salva 7 no registrador
 	#movi r2, 7
 	movi r19, 268
-	br trataDados
+	br fim_verip2
 p2veri7:
 	movi r3, 0x37
-	bne r17, r3, p2veri8 #verifica se o valor recebido é 7 e salva 80% do valor total de Y no registrador
+	bne r17, r3, p2veri8 #verifica se o valor recebido é 7 e salva 8 no registrador
 	#movi r2, 8
 	movi r19, 307
-	br trataDados
+	br fim_verip2
 p2veri8:
 	movi r3, 0x38
-	bne r17, r3, p2veri9 #verifica se o valor recebido é 8 e salva 0% do valor total de Y no registrador
+	bne r17, r3, p2veri9 #verifica se o valor recebido é 8 e salva 9 no registrador
 	#movi r2, 9
 	movi r19, 345
-	br trataDados
+	br fim_verip2
 p2veri9:
 	movi r3, 0x39
-	bne r17, r3, gameLoop #valorP2 #verifica se o valor recebido é 9 e salva 100% do valor total de Y no registrador
+	bne r17, r3, gameLoop #valorP2 #verifica se o valor recebido é 9 e salva 10 no registrador
 	#movi r2, 10
-	movi r19, 392
+	movi r19, 384
+	br fim_verip2
+fim_verip2:
 
 trataDados:
 # Faz o tratamento dos valores lidos do potenciometro através da UART
+	#movia r12, PLAYER1
+	#movia r13, PLAYER2
+	#ldwio r1, 0(r12)
+	#ldwio r2, 0(r13)
+	#addi r1, r1, 1 			# pos + 1
+	#addi r2, r2, 1
+	#movi r3, 4
+	#custom 0, r1, r1, r3 	# Chama a custom de divisão e faz: r1 = r1 / 4
+	#custom 0, r2, r2, r3	
+	#movi r3, 6
+	#custom 2, r1, r1, r3 	# Chama a custom de multiplicação e faz: r1 = r1 * 6
+	#custom 2, r2, r2, r3	
+	#addi r1, r0, 220 #addi r1,r1, 7 		# Soma o valor de r1 com 7: r1 = r1 + 7
+	#addi r2, r2, 372
 
 	# Barra Player 1 (Esquerda)
-	movi r3, 5 			# Eixo x fixo para a barra
-	movia r13, P1X
-	stwio r3, 0(r13)
-	movia r13, P1Y
-	stwio r18, 0(r13) 	# Salva a porcentagem referente ao valor lido do potenciometro no endereço P1Y para leitura do VGA
+	movi r3, 5 # Eixo x fixo para a barra
+	movia r12, P1X
+	stwio r3, 0(r12)
+	movia r12, P1Y
+	stwio r18, 0(r12)
 	
 	# Barra Player 2 (Direita)
-	movia r3, 620 		# Eixo x fixo para a barra
-	movia r13, P2X
-	stwio r3, 0(r13)
-	movia r13, P2Y
-	stwio r19, 0(r13)	# Salva a porcentagem referente ao valor lido do potenciometro no endereço P2Y para a leitura do VGA
+	movia r3, 620 # Eixo x fixo para a barra
+	movia r12, P2X
+	stwio r3, 0(r12)
+	movia r12, P2Y
+	stwio r19, 0(r12)
 
-	ldwio ra, 4(sp) # Ler o contexto de retorno do fluxo de execução
+	ldwio ra, 4(sp)
 	ret
+
 # ------------------------------------------------------------------------
 
 # Rotinas de colisões ----------------------------------------------------
 # Verifica se a bola chegou na posião x da barra 1 ou 2, e entra no label referente a colisão ocorrida.
 PlayersCollision:
 	movi r1, 620 # X da barra 2
-	mov r12, r5   # X da bola
-	addi r12, r12, 4
-	bge r12, r1, verificarBarra2
-	
+	mov r2, r5   # X da bola
+	addi r2, r2, 4
+	bge r2, r1, verificarBarra2
 	movi r1, 10 # X da barra 1
-	subi r12, r12, 8 # X da bola
-	bge r1, r12, verificarBarra1
+	subi r2, r2, 8 # X da barra
+	bge r1, r2, verificarBarra1
 	ret
 
-# Pega o valor obtido pelo potenciometro para o y da tela e assim retorna a colisão ou não
+# Faz a conversão do valor obtido pelo potenciometro para o y da tela e assim retorna a colisão ou não
 verificarBarra1:
-	add r4, r0, r6
-	bge r4, r18, tamanhoBarra1
+	/*movia r13, PLAYER1
+	ldwio r1, 0(r13)
+	movi r14, 1
+	addi r1, r1, 1
+	movi r3, 4
+	custom 0, r1, r1, r3
+	movi r3, 6
+	custom 2, r1, r1, r3
+	addi r1, r1, 220 #7
+	mov r2, r6*/
+	bge r2, r18, tamanhoBarra1
 	ret
 
-# Pega o valor pego pelo potenciometro para o y da tela e assim retorna a colisão ou não
+# Faz a conversão do valor pego pelo potenciometro para o y da tela e assim retorna a colisão ou não
 verificarBarra2:
-	add r4, r0, r6
-	bge r4, r19, tamanhoBarra2
+	/*movia r13, PLAYER2
+	movi r14, -1
+	ldwio r1, 0(r13)
+	addi r1, r1, 1 # Add 1 em r1: r1 = r1 + 1
+	movi r3, 4
+	custom 0, r1, r1, r3 # Divide r1 por 4: r1 = r1 / 4
+	movi r3, 6
+	custom 2, r1, r1, r3 # Multiplica r1 por 6: r1 = r1 * 6
+	addi r1, r1, 372 #7*/
+	mov r2, r6
+	bge r2, r18, tamanhoBarra2
 	ret
 
 # Ao colidir com a barra, dependendo da posição entra em um hit diferente
 tamanhoBarra1:
 	addi r1, r1, 16
-	bge r1, r12, _hit1
+	bge r1, r2, _hit1
 	addi r1, r1, 16
-	bge r1, r12, _hit2
+	bge r1, r2, _hit2
 	addi r1, r1, 16
-	bge r1, r12, _hit3
+	bge r1, r2, _hit3
 	addi r1, r1, 16
-	bge r1, r12, _hit4
+	bge r1, r2, _hit4
 	addi r1, r1, 16
-	bge r1, r12, _hit5
+	bge r1, r2, _hit5
 	ret
 
 # Ao colidir com a barra, dependendo da posição entra em um hit diferente
 tamanhoBarra2:
 	addi r1, r1, 16
-	bge r1, r12, hit1
+	bge r1, r2, hit1
 	addi r1, r1, 16
-	bge r1, r12, hit2
+	bge r1, r2, hit2
 	addi r1, r1, 16
-	bge r1, r12, hit3
+	bge r1, r2, hit3
 	addi r1, r1, 16
-	bge r1, r12, hit4
+	bge r1, r2, hit4
 	addi r1, r1, 16
-	bge r1, r12, hit5
+	bge r1, r2, hit5
 	ret
 # ------------------------------------------------------------------------
 
 #HIT BARRA DIREITA
 hit1:
-    movia r14, RND		# Random
+    movia r14, RND
 	ldwio r1, 0(r14)
 	mov r2, r0
 	beq r1, r2, zero
@@ -420,53 +459,56 @@ _tres:
 	movi r7, 3
 	movi r8, 1
 	ret
-
-# Ao realizar uma colisão em qualquer parte da parede entra em uma parte diferente
+#Ao realizar uma colisão em qualquer parte do wall
+#entra em uma parte diferente
 wallCollision:
 	movi r1, 471
-	mov r2, r6		# Add em r2 o valor atual de y da bola
+	mov r2, r6
 	addi r2,r2,4
-	bge r2, r1, changeDownWall	# Verifica se o valor y da bola é igual ou maior que o limite inferior da tela, se sim, colisão inferior
+	bge r2, r1, changeDownWall
 	movi r1, 625
-	mov r2, r5		# Add em r2 o valor atual de x da bola
+	mov r2, r5
 	addi r2, r2, 4
-	bge r2, r1, changeRightWall	# Verifica se o valor x da bola é igual ou maior que o limite direito da tela, se sim, colisão com parede da esquerda  
+	bge r2, r1, changeRightWall
 	movi r1, 8
-	mov r2, r6		# Add em r2 o valor atual do y da bola
+	mov r2, r6
 	subi r2, r2, 4
-	bge r1, r2, changeDownWall	# Verifica se o valor de y da bola é igual ou maior que o limite superior da tela, se sim, colisão superior
+	bge r1, r2, changeDownWall
 	movi r1, 8
-	mov r2, r5		# Add em r2 o valor atual do x da bola
+	mov r2, r5
 	subi r2, r2, 4
-	bge r1, r2, changeLeftWall	# Verifica se o valor x da bola é igual ou menor que o limite esquerdo da tela, se sim, colisão com parede da direita
+	bge r1, r2, changeLeftWall
 	ret
-# Ao ocorrer a colisão em uma das paredes, adiciona um ponto para o jogador caso o mesmo nao tenha atingido 5 pontos.
-# Ao atingir 5 é dada a vitoria!
+#Ao ocorrer a colisão em uma das walls
+#Adiciona um ponto para o jogador caso
+#o mesmo nao tenha atingido 5 pontos.
+#Ao atingir 5 é dada a vitoria
 changeRightWall:
-	addi r9, r9, 1		# Incrementa pontuação do jogador 1
+	addi r9, r9, 1
 	movi r1, 9
-	beq r1, r9, win1	# Compara se o jogador 1 ganhou (atingiu 9 gols)
+	beq r1, r9, win1
 	addi r3, r9, 48
 	movi r1, 0x8a
 	instr r1
 	data r3
-	movi r7, 3			# Reseta velocidade X da bola
-	mov r8, r7			# Reseta velocidade Y da bola
+	movi r7, 3
+	mov r8, r7
 	br resetBall
 
 changeLeftWall:
-	addi r10, r10, 1 	# Incrementa pontuação do jogador 1
+	addi r10, r10, 1
 	movi r1, 9
-	beq r1, r10, win2	# Compara se o jogador 2 ganhou (atingiu 9 gols)
+	beq r1, r10, win2
 	addi r3, r10, 48
 	movi r1, 0xca
 	instr r1
 	data r3
-	movi r7, 3			# Reseta velocidade X da bola
-	mov r8, r7			# Reseta velocidade Y da bola
+	movi r7, 3
+	mov r8, r7
 	br resetBall
 
-# Ao bater na parede de cima ou baixo, retorna no mesmo angulo de entrada
+#Ao bater na wall de cima ou baixo
+#retorna no mesmo angulo de entrada
 changeDownWall:
 	movi r1, -1
 	custom 2, r8,r8,r1
@@ -475,8 +517,8 @@ changeDownWall:
 # GAME OVER --------------------------------------------------------------
 #espera o botao de start para começar o jogo novamente
 gameOver:
-	ldwio r4, 0(r11)
-	beq r4, r0, gameOver
+	ldwio r2, 0(r11)
+	beq r2, r0, gameOver
 	movi r2, 1
 	instr r2
 	call menu
@@ -746,9 +788,8 @@ win2:
    # Retorna o caractere em r2. Retorna "\ 0" se não houver novo caractere na fila RX FIFO.
 GET_CHAR:
    #call delay
-   stw ra, 8(sp)					 # Salva o contexto
+   stw ra, 8(sp)
    movi r15, UART
-   
    ldwio r17, 0(r15)                 # read the RS232 UART Data register 
    andi r16, r17, 0x8000             # check if there is new data 
    bne r16, r0, RETURN_CHAR

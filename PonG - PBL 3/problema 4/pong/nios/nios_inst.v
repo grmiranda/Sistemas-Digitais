@@ -14,8 +14,8 @@
 		.p2x_export      (<connected-to-p2x_export>),      //      p2x.export
 		.p2y_export      (<connected-to-p2y_export>),      //      p2y.export
 		.random_export   (<connected-to-random_export>),   //   random.export
-		.start_export    (<connected-to-start_export>),    //    start.export
 		.rs232_RXD       (<connected-to-rs232_RXD>),       //    rs232.RXD
-		.rs232_TXD       (<connected-to-rs232_TXD>)        //         .TXD
+		.rs232_TXD       (<connected-to-rs232_TXD>),       //         .TXD
+		.start_export    (<connected-to-start_export>)     //    start.export
 	);
 

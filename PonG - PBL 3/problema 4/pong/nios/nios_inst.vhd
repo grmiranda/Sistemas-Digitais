@@ -15,9 +15,9 @@
 			p2x_export      : out std_logic_vector(9 downto 0);                    -- export
 			p2y_export      : out std_logic_vector(9 downto 0);                    -- export
 			random_export   : in  std_logic_vector(1 downto 0) := (others => 'X'); -- export
-			start_export    : in  std_logic                    := 'X';             -- export
 			rs232_RXD       : in  std_logic                    := 'X';             -- RXD
-			rs232_TXD       : out std_logic                                        -- TXD
+			rs232_TXD       : out std_logic;                                       -- TXD
+			start_export    : in  std_logic                    := 'X'              -- export
 		);
 	end component nios;
 
@@ -38,8 +38,8 @@
 			p2x_export      => CONNECTED_TO_p2x_export,      --      p2x.export
 			p2y_export      => CONNECTED_TO_p2y_export,      --      p2y.export
 			random_export   => CONNECTED_TO_random_export,   --   random.export
-			start_export    => CONNECTED_TO_start_export,    --    start.export
 			rs232_RXD       => CONNECTED_TO_rs232_RXD,       --    rs232.RXD
-			rs232_TXD       => CONNECTED_TO_rs232_TXD        --         .TXD
+			rs232_TXD       => CONNECTED_TO_rs232_TXD,       --         .TXD
+			start_export    => CONNECTED_TO_start_export     --    start.export
 		);
 

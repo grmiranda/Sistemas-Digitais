@@ -1,0 +1,33 @@
+Lista de Registradores:
+
+r1:  propósito geral
+r2:  propósito geral
+r3:  propósito geral
+r4:  propósito geral
+
+# Registradores para a bola
+r5:  X da bola
+r6:  Y da bola
+r7:  Velocidade em X da bola
+r8:  Velocidade em Y da bola
+r12: propósito geral para a bola
+
+#Registradores para as Barras
+r13: propósito geral para a barra
+r18: Y da barra 1
+r19: Y da barra 2
+
+# Pontuação dos jogadores
+r9:  Pontos do jogador 1
+r10: Pontos do jogador 2
+
+# Registradores de funcionamento do Jogo
+r11: Endereço do botão de Start
+r15: Endereço da UART
+r16: Registrador de uso da UART
+r17: Armazena valor lido da UART
+
+custom 0: Divisão
+custom 1: LCD
+custom 2: Multiplicação
+custom 3: Delay

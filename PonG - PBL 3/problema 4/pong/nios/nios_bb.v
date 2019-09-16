@@ -15,9 +15,9 @@ module nios (
 	p2x_export,
 	p2y_export,
 	random_export,
-	start_export,
 	rs232_RXD,
-	rs232_TXD);	
+	rs232_TXD,
+	start_export);	
 
 	input		busy_export;
 	output	[9:0]	bx_export;
@@ -34,7 +34,7 @@ module nios (
 	output	[9:0]	p2x_export;
 	output	[9:0]	p2y_export;
 	input	[1:0]	random_export;
-	input		start_export;
 	input		rs232_RXD;
 	output		rs232_TXD;
+	input		start_export;
 endmodule
