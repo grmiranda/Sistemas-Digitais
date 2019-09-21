@@ -1,6 +1,4 @@
 //VGA Sincronizador
-// Crystal & Havallon
-// 02/12/2017
 module vgaSync(clk, rst, hsync, vsync, hpos, vpos, pxl_en);
 
 	input clk;
@@ -14,10 +12,10 @@ module vgaSync(clk, rst, hsync, vsync, hpos, vpos, pxl_en);
 	
 	output reg pxl_en;
 	
-	localparam hva = 640;
-	localparam hfp = 16;
-	localparam hsp = 96;
-	localparam hbp = 48;
+	localparam hva = 640;	//Horizontal video active - D
+	localparam hfp = 16;	//Horizontal front porch - E
+	localparam hsp = 96;	//Horizontal Sync Pulse - B
+	localparam hbp = 48;	//Horizontal Back Porch	- C
 	
 	localparam vva = 480;
 	localparam vfp = 11;

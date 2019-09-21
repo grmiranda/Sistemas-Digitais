@@ -68,7 +68,7 @@ module vgaPxlGen (clk, clk50, frame_pulse, rst, pxl_en, x, y, r, g, b, x1, y1, x
 		end
 	end
 	
-	// Deixando a tela vermelha
+
 	always @ (posedge clk or posedge rst) begin
 		if (rst) begin
 		//Reseta os pixels na tela
@@ -83,21 +83,21 @@ module vgaPxlGen (clk, clk50, frame_pulse, rst, pxl_en, x, y, r, g, b, x1, y1, x
 				if(x >= p1X && x < p1X+10 && y >= p1Y && y < p1Y + 80)begin
 					//Bara da esquerda
 					relY <= y - p1Y;
-					r <= 0;									//relX[9 - (x-p1X)];
-					g <= 0;								//relX[9 - (x-p1X)];
-					b <= 255;									//relX[9 - (x-p1X)];
+					r <= 0;		
+					g <= 0;		
+					b <= 255;	
 				end else if (x >= p2X && x < p2X+10 && y >= p2Y && y < p2Y + 80) begin
 					//Bara da direita
 					relY <= y - p2Y;
-					r <= 0;									//relX[9 - (x-p2X)];
-					g <= 0;									//relX[9 - (x-p2X)];
-					b <= 255;								//relX[9 - (x-p2X)];
+					r <= 0;		
+					g <= 0;		
+					b <= 255;	
 				end else if (x >= bX-4 && x < bX+4 && y >= bY-4 && y < bY + 4) begin
 					//Bola
 					relYB <= y - bY + 5'd4;
-					r <= 1'b0;								//relXB[8 - (x-bX+5'd4)];
-					g <= 1'b0;									//relXB[8 - (x-bX+5'd4)];
-					b <= 1'b0;									//relXB[8 - (x-bX+5'd4)];
+					r <= 1'b0;		
+					g <= 1'b0;		
+					b <= 1'b0;		
 				end else if (y < 7 || y > 471) begin //8 - 471
 					// Barras das paredes (barras horizontais)
 					//r <= 1'b1;

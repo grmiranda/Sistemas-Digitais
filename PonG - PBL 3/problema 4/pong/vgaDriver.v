@@ -1,6 +1,4 @@
 //VGA DRIVER
-// Crystal & Havallon
-// 02/12/2017
 module vgaDriver(clock_50MHz, rst, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B, x1, y1, x2, y2, xb, yb);
 	
 	input clock_50MHz;
